@@ -61,7 +61,7 @@ The main workflow and all experiments are documented in the `notebooks/EDA.ipynb
 3.  Ensure you select the `venv` kernel.
 4.  Run the cells sequentially to load data, build the model, train it, and evaluate the results.
 
-## Results
+## Results & Validation
 
 The final model, a custom CNN with Batch Normalization and a stratified data split, achieved the following performance:
 
@@ -69,6 +69,9 @@ The final model, a custom CNN with Batch Normalization and a stratified data spl
 -   **Validation Accuracy**: ~68.0%
 -   **Final Test Accuracy**: **68.04%**
 
-The close alignment between validation and test accuracy indicates that the model is generalizing well and is not significantly overfit.
+To ensure the model's performance was robust and not dependent on a single data split, a **10-fold cross-validation** was performed. The model was trained and evaluated 10 times on different subsets of the data.
 
+-   **Average 10-Fold Cross-Validation Accuracy**: **67.80%**
+
+The consistent accuracy across multiple folds demonstrates that the model generalizes well to unseen data.
 ---
